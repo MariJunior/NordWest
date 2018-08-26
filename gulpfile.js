@@ -1,7 +1,7 @@
 "use strict";
 
 var gulp = require("gulp");
-var sass = require("gulp-sass");
+var less = require("gulp-less");
 var plumber = require("gulp-plumber");
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
@@ -33,9 +33,9 @@ gulp.task("copy", function() {
 });
 
 gulp.task("style", function() {
-  gulp.src("source/sass/style.scss")
+  gulp.src("source/less/style.less")
     .pipe(plumber())
-    .pipe(sass())
+    .pipe(less())
     .pipe(postcss([
       autoprefixer()
     ]))
@@ -107,7 +107,7 @@ gulp.task("serve", function() {
     ui: false
   });
 
-  gulp.watch("source/sass/**/*.{scss,sass}", ["style"]);
+  gulp.watch("source/less/**/*.less", ["style"]);
   gulp.watch("source/*.html", ["html"]);
   gulp.watch("source/js/*.js", ["copy"]).on("change", server.reload);
   gulp.watch("source/img/*.svg", ["sprite"]).on("change", server.reload);

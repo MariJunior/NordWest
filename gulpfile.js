@@ -32,23 +32,16 @@ gulp.task("copy", function() {
       .pipe(gulp.dest("build"));
 });
 
-// Подключение плагина "gulp-html-prettify" и антиминификация всех .html файлов (добавление табуляции = 2 пробелам) в директории 'build'
-gulp.task('prettify', function() {
-  gulp.src('build/*.html')
-      .pipe(htmlprettify({
-        indent_char: ' ',
-        indent_size: 2
-      }))
-      .pipe(gulp.dest('build'))
-});
-
 // Подключение плагина "gulp-pug" и компиляция всех основных .pug файлов из директории 'source' в .html, их сохранение в директории 'build', последующая антиминификация и начало отслеживания изменений
 gulp.task("html", function() {
   return gulp.src("source/pages/*.pug")
       .pipe(plumber())
       .pipe(pug())
+      .pipe(htmlprettify({
+        indent_char: " ",
+        indent_size: 2
+      }))
       .pipe(gulp.dest("build"))
-      .pipe(prettify())
       .pipe(server.stream());
 });
 

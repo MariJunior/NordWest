@@ -1,0 +1,12 @@
+footer.page-footer
+  div.container
+    div.page-footer__wrap
+      ul.pages
+      for page in footerPagesList
+        li
+          a(href=page.href)= page.title
+      a(href="mailto:mail@nordwest74.ru") mail@nordwest74.ru
+      div.telephones
+        a(href="tel:+73512304216") +7 (351) 230-42-16
+        a(href="tel:+79088209260") +7 (908) 820-92-60
+    p ООО “НордВест” 2007-2018

@@ -1,0 +1,12 @@
+header.page-header
+  div.container
+    nav.page-navigation
+      a(href="#")
+        img(src="img/", width="62", height="29", alt="Логотип ООО Нордвест")
+      ul.page-navigation__list
+      for page in headerPagesList
+        li
+          if page.href
+            a(href=page.href)= page.title
+          else
+            a= page.title

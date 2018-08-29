@@ -1,21 +1,16 @@
+include data/index-page.pug
+include mixins/header.pug
+include mixins/section-list.pug
+include mixins/footer.pug
+
 doctype html
 html(lang="ru")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title Главная
+    title НордВест - Главная
   body
-    -
-      var headerPagesList = [
-        {title: "Главная"},
-        {title: "Прайс", href: "price.html"},
-        {title: "Новости", href: "news.html"},
-        {title: "О компании", href: "about.html"},
-        {title: "Контакты", href: "contacts.html"},
-        {title: "Центр обучения", href: "training.html"}
-      ];
-
-    include includes/header.pug
+    +header(pagesList, 1)
 
     main.page-main
       h1.visually-hidden Основные сведения о компании
@@ -24,41 +19,12 @@ html(lang="ru")
           p «Мы на рынке уже более 7 лет
           p своим клиентам гарантируем результат!»
 
-      -
-        var clientsList = [
-          "Предприятиям, уставшим от неоптыных бухгалтеров",
-          "Предпринимателям, чей бюджет не позволяет иметь штатного бухгалтера",
-          "Тем, кто запутался в сложной документации",
-          "Тем, кто хотел бы реорганизовать и отптимизировать свою финанасовую и налоговую деятельность",
-          "Тем, кто ищет новый вектор развития"
-        ];
-      -
-        var servicesList = [
-          "Бухгалтерское обслуживание предприятий малого и среднего бизнеса на основе аутсорсинга",
-          "Восстановление бухгалтерского и налового учета",
-          "Постановка бухгалтерского и налового учета предприятий",
-          "Составление и сдача отчетности в налоговые органы, ПФР, ФСС, РФ",
-          "Составление и печать первичных документов",
-          "Ведение и учет заработной платы",
-          "Ведение кадрового делопроизводства",
-          "Экспертиза (оценка) сосотяние бухгалтерского учета",
-          "Налоговое планирование и администрирование",
-          "Консультационные услуги по бухгалтерскому учету и налогообложению"
-        ];
+      +section-list(clientsData)
+      +section-list(servicesData)
 
-      mixin typical-section(name, title, list)
-        section(class=name)
-          div.container
-            h2= title
-            ul(class=name + "__list")
-              each item in list
-                li= item
-
-      +typical-section("clients", "Кому мы предоставляем услуги?", clientsList)
-      +typical-section("services", "Какие услуги мы предоставляем?", servicesList)
       section.staff
         div.container
-          h2.staff__header Кто работает для Вас?
+          h2 Кто работает для Вас?
           ul.staff__list
             li
               img(src="img/grinir.jpg", width="368", height="295", alt="Гриневич Ирина")
@@ -80,33 +46,20 @@ html(lang="ru")
               cite Файрузова Надежда
               q Главное для меня это отвественность перед нашими клиентами!
               p Работает в компании с 2015 года
+
       section.certificates
+        - var certificatesNumber = 10;
         div.container
-          h2.certificates__header Наши сертификаты
+          h2 Наши сертификаты
           ul.certificates__list
-            li
-              img(src="img/cert1.jpg", width="170", height="255", alt="Сертификат")
-            li
-              img(src="img/cert2.jpg", width="170", height="255", alt="Сертификат")
-            li
-              img(src="img/cert3.jpg", width="170", height="255", alt="Сертификат")
-            li
-              img(src="img/cert4.jpg", width="170", height="255", alt="Сертификат")
-            li
-              img(src="img/cert5.jpg", width="170", height="255", alt="Сертификат")
-            li
-              img(src="img/cert6.jpg", width="170", height="255", alt="Сертификат")
-            li
-              img(src="img/cert7.jpg", width="170", height="255", alt="Сертификат")
-            li
-              img(src="img/cert8.jpg", width="170", height="255", alt="Сертификат")
-            li
-              img(src="img/cert9.jpg", width="170", height="255", alt="Сертификат")
-            li
-              img(src="img/cert10.jpg", width="170", height="255", alt="Сертификат")
+            - for (var i = 1; i <= certificatesNumber; ++ i) {
+              li
+                img(src="img/cert"+i+".jpg", width="170", height="255", alt="Сертификат")
+            - }
+
       section.reviews
         div.container
-          h2.reviews__header
+          h2 Отзывы
           ul.reviews__list
             li
               img(src="img/vasyapetr.jpg", width="108", height="108" alt="Вася Петров")
@@ -143,10 +96,11 @@ html(lang="ru")
                 | Задача организации, в особенности же сложившаяся структура организации позволяет оценить значение позиций, занимаемых участниками в отношении поставленных задач.
                 | Таким образом сложившаяся структура организации влечет за собой процесс внедрения и модернизации форм развития.
               a(href="#") Подробнее
+
       section.feedback
         div.container
-          h2.feedback__header Форма обратной связи
-          form(action="#", method="get")
+          h2 Форма обратной связи
+          form.feedback__form(action="#", method="get")
             div
               label
                 input#name(type="text", name="name", placeholder="Ваши ФИО")
@@ -157,17 +111,10 @@ html(lang="ru")
             label
               textarea#comments(name="comments" placeholder="Комментарии")
             button(type="submit") Отправить
+
       section.map
-        h2.map__header Наше местоположение
+        h2 Наше местоположение
         div.map__container
           div.map__block
-    -
-      var footerPagesList = [
-        {title: "Прайс", href: "price.html"},
-        {title: "Новости", href: "news.html"},
-        {title: "О компании", href: "about.html"},
-        {title: "Контакты", href: "contacts.html"},
-        {title: "Центр обучения", href: "training.html"}
-      ];
 
-    include includes/footer.pug
+    +footer(pagesList, 1)

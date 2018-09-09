@@ -1,0 +1,19 @@
+include data/contacts-page.pug
+include mixins/header.pug
+include mixins/footer.pug
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title НордВест - Контакты
+  body
+    +header(pagesList, 5)
+
+    main.page-main
+      div.page-container
+        h1.page-title Если у Вас есть вопросы - напишите нам
+
+        include includes/contacts.pug
+
+    +footer(pagesList, 5)

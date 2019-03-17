@@ -109,6 +109,7 @@ gulp.task("build", function(done) {
 // Подключение плагина "browser-sync" и начало отслеживания изменений файлов в директории "build/", выполнения соотв. задач и перезагрузки страницы
 gulp.task("serve", function() {
   server.init({
+    browser: 'google chrome',
     server: "build/",
     notify: false,
     open: true,
@@ -116,7 +117,8 @@ gulp.task("serve", function() {
     ui: false
   });
 
-  gulp.watch("source/pages/**/*.pug", ["html"]);
-  gulp.watch("source/less/**/*.less", ["style"]);
+  gulp.watch("source/pages/**/*.pug", ["html"]).on("change", server.reload);
+  gulp.watch("source/less/**/*.less", ["style"]).on("change", server.reload);
   gulp.watch("source/js/*.js", ["copy"]).on("change", server.reload);
+  gulp.watch("source/img/*", ["images"]).on("change", server.reload);
 });

@@ -27,7 +27,7 @@ gulp.task('clean', function() {
 // Копирование неизменяемых файлов шрифтов, изображений и иных из директории 'source' в директорию 'build'
 gulp.task('copy', function() {
   return gulp.src([
-    'source/fonts/**/*.{woff,woff2}',
+    'source/fonts/**/*.{woff,woff2,eot,ttf}',
     'source/img/**'
   ], {
     base: 'source'
@@ -128,16 +128,16 @@ gulp.task('serve', function () {
 
 // Проверка и приведение концов строк всех файлов к \n (LF) для GitHub (ну и просто для единообразия)
 gulp.task('correct-line-ending', function() {
-    gulp.src(['./**/*', '!node_modules/**'])
-        .pipe(isBinary())
-        .pipe(through.obj(function (file, enc, next) {
-            if (file.isBinary()) {
-                next();
-                return;
-            }
-
-            next(null, file);
-        }))
+    gulp.src(['./**/*', '!node_modules/**', '!source/img/**', '!build/img/**'])
+        // .pipe(isBinary())
+        // .pipe(through.obj(function (file, enc, next) {
+        //     if (file.isBinary()) {
+        //         next();
+        //         return;
+        //     }
+        //
+        //     next(null, file);
+        // }))
         .pipe(lec({
           verbose: true,
           eolc: 'LF',

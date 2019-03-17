@@ -1,10 +1,9 @@
 mixin header(data, current)
   header.page-header
-    div.container
       nav.page-header__navigation
         a(href=(current === 1 ? undefined : "index.html"))
-          img(src="img/", width="62", height="29", alt="Логотип ООО Нордвест")
-        ul.page-header__navigation-list
+          img(src="img/logo.svg", width="70", height="33", alt="Логотип ООО Нордвест")
+        ul.page-header__navigation-list.navigation-list
           each item, index in data
             li(class=(index === current-1 ? "current" : undefined))
               if item.href

@@ -9,21 +9,20 @@ html(lang="ru")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title НордВест - Главная
+    link(rel="stylesheet", href="css/style.css")
   body
-    +header(pagesList, 1)
+    div.page-container
+      +header(pagesList, 1)
 
-    main.page-main
-      div.page-container
+      main.page-main
         h1.visually-hidden Основные сведения о компании
         div.intro-block
-          div.container
             p «Мы на рынке уже более 7 лет
             p своим клиентам гарантируем результат!»
 
         +section-list(clientsData)
+        
         +section-list(servicesData)
-
-        include includes/staff.pug
 
         section.certificates
           - var certificatesNumber = 10;
@@ -75,6 +74,9 @@ html(lang="ru")
                   | Таким образом сложившаяся структура организации влечет за собой процесс внедрения и модернизации форм развития.
                 a(href="#") Подробнее
 
-        include includes/contacts.pug
+        section.map
+          h2 Наше местоположение
+            div.map__container
+              div.map__block
 
     +footer(pagesList, 1)

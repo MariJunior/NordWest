@@ -3,7 +3,7 @@ mixin footer(data, current)
     div.container
       div.page-footer__wrap
         nav.page-footer__navigation
-          ul.page-footer__navigation-list
+          ul.page-footer__navigation-list.navigation-list
             each item, index in data
               if index !== current - 1
                 li

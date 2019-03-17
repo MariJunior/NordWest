@@ -14,6 +14,19 @@ html(lang="ru")
       div.page-container
         h1.page-title Если у Вас есть вопросы - напишите нам
 
-        include includes/contacts.pug
+        section.feedback
+          div.container
+            h2 Форма обратной связи
+            form.feedback__form(action="#", method="get")
+              div
+                label
+                  input#name(type="text", name="name", placeholder="Ваши ФИО")
+                label
+                  input#telephone(type="tel", name="telephone", placeholder="Номер телефона")
+                label
+                  input#email(type="email", name="email", placeholder="Ваш e-mail")
+              label
+                textarea#comments(name="comments" placeholder="Комментарии")
+              button(type="submit") Отправить
 
     +footer(pagesList, 5)

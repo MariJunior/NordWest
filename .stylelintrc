@@ -3,6 +3,8 @@
 
   "rules": {
     "declaration-no-important": true,
-    "indentation": [2, {"ignore": ["inside-parens"]}]
+    "indentation": [2, {"ignore": ["inside-parens"]}],
+    "font-family-name-quotes": "always-where-recommended",
+    "function-comma-space-after": "always-single-line"
   }
 }

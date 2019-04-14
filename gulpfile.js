@@ -15,9 +15,7 @@ var imagemin = require('gulp-imagemin');
 var pump = require('pump');
 var uglify = require('gulp-uglify');
 var run = require('run-sequence');
-var isBinary = require("gulp-is-binary");          // detect if a file is a binary
-var through = require("through2");
-var lec = require ('gulp-line-ending-corrector');
+// var lec = require ('gulp-line-ending-corrector');
 
 // Удаление директории 'build'
 gulp.task('clean', function() {
@@ -112,10 +110,10 @@ gulp.task('build', function(done) {
 // Подключение плагина 'browser-sync' и начало отслеживания изменений файлов в директории 'build/', выполнения соотв. задач и перезагрузки страницы
 gulp.task('serve', function () {
   server.init({
-    browser: 'google chrome',
+    // browser: 'google chrome',
     server: 'build/',
     notify: false,
-    open: true,
+    open: false,
     cors: true,
     ui: false
   });
@@ -127,21 +125,12 @@ gulp.task('serve', function () {
 });
 
 // Проверка и приведение концов строк всех файлов к \n (LF) для GitHub (ну и просто для единообразия)
-gulp.task('correct-line-ending', function() {
-    gulp.src(['./**/*', '!node_modules/**', '!source/img/**', '!build/img/**'])
-        // .pipe(isBinary())
-        // .pipe(through.obj(function (file, enc, next) {
-        //     if (file.isBinary()) {
-        //         next();
-        //         return;
-        //     }
-        //
-        //     next(null, file);
-        // }))
-        .pipe(lec({
-          verbose: true,
-          eolc: 'LF',
-          encoding: 'utf8'
-        }))
-        .pipe(gulp.dest('./'));
-});
+// gulp.task('correct-line-ending', function() {
+//     gulp.src(['./**/*', '!node_modules/**', '!source/img/**', '!build/img/**'])
+//         .pipe(lec({
+//           verbose: true,
+//           eolc: 'LF',
+//           encoding: 'utf8'
+//         }))
+//         .pipe(gulp.dest('./'));
+// });

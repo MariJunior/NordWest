@@ -1,16 +1,18 @@
-include data/training-page.pug
-include mixins/header.pug
-include mixins/footer.pug
-doctype html
-html(lang="ru")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title НордВест - Тренинги
-  body
-    +header(pagesList, 6)
+extends ../pug/layout.pug
+include ../pug/mixins/header.pug
+include ../pug/mixins/footer.pug
+include ../pug/data/pages-list.pug
+include ../pug/data/training-page.pug
 
-    main.page-main
-      div.page-container
+block meta
+  title НордВест - Тренинги
+  meta(name='description', content='')
 
-    +footer(pagesList, 6)
+block header
+  +header(pagesList, 6)
+
+block content
+  .page-container
+
+block footer
+  +footer(pagesList, 6)

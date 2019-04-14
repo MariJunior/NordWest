@@ -1,32 +1,35 @@
-include data/contacts-page.pug
-include mixins/header.pug
-include mixins/footer.pug
-doctype html
-html(lang="ru")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title НордВест - Контакты
-  body
-    +header(pagesList, 5)
+extends ../pug/layout.pug
+include ../pug/mixins/header.pug
+include ../pug/mixins/footer.pug
+include ../pug/data/pages-list.pug
+include ../pug/data/contacts-page.pug
 
-    main.page-main
-      div.page-container
-        h1.page-title Если у Вас есть вопросы - напишите нам
+block meta
+  title НордВест - Контакты
+  meta(name='description', content='')
 
-        section.feedback
-          div.container
-            h2 Форма обратной связи
-            form.feedback__form(action="#", method="get")
-              div
-                label
-                  input#name(type="text", name="name", placeholder="Ваши ФИО")
-                label
-                  input#telephone(type="tel", name="telephone", placeholder="Номер телефона")
-                label
-                  input#email(type="email", name="email", placeholder="Ваш e-mail")
-              label
-                textarea#comments(name="comments" placeholder="Комментарии")
-              button(type="submit") Отправить
+block header
+  +header(pagesList, 5)
 
-    +footer(pagesList, 5)
+block content
+  .page-container
+    h1.page-title Если у Вас есть вопросы - напишите нам
+
+    section.feedback
+      .container
+        h2 Форма обратной связи
+        form.feedback__form(action='#', method='get')
+          //- TODO: вместо div'а обернуть в fieldset без legend'а?¿
+          .feedback__form-wrap
+            label
+              input#name(type='text', name='name', placeholder='Ваши ФИО')
+            label
+              input#telephone(type='tel', name='telephone', placeholder='Номер телефона')
+            label
+              input#email(type='email', name='email', placeholder='Ваш e-mail')
+          label
+            textarea#comments(name='comments', placeholder='Комментарии')
+          button(type='submit') Отправить
+
+block footer
+  +footer(pagesList, 5)

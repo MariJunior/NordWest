@@ -1,1 +1,93 @@
-/* stylelint-disable */
+.reviews {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  background-color: #8d9799;
+  background-image: url("../img/reviews.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &__title {
+    margin-bottom: 100px;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    width: 880px;
+    margin: 0 auto;
+    padding-left: 0;
+
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    width: 390px;
+    margin-bottom: 40px;
+    padding: 30px 15px;
+
+    background-color: rgba(255, 255, 255, 0.3);
+    background-image: repeating-linear-gradient(-45deg,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.05) 2px,
+      rgba(0, 0, 0, 0.05) 2px,
+      rgba(0, 0, 0, 0.05) 4px);
+
+    &:not(:nth-child(even)):not(:last-child) {
+      margin-right: 100px;
+    }
+
+    &-reviwer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    &-photo {
+      width: 108px;
+      height: 108px;
+
+      border-radius: 50%;
+
+      object-fit: cover;
+    }
+
+    &-reviwer-info {
+      text-align: center;
+    }
+
+    &-name {
+      font-size: 28px;
+      font-style: normal;
+    }
+
+    &-function {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    &-company {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    &-text {
+      max-height: 300px;
+      margin: 0;
+      overflow-y: hidden;
+
+      font-size: 16px;
+    }
+
+    &-more {
+      margin-top: auto;
+      padding-top: 10px;
+    }
+  }
+}

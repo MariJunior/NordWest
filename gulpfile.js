@@ -4,7 +4,6 @@
 
 const {series, parallel, src, dest, watch} = require('gulp');
 const path = require('path');
-// const gulp = require('gulp');
 const del = require('del');
 const htmlprettify = require('gulp-html-prettify');
 const pug = require('gulp-pug');
@@ -17,6 +16,8 @@ const rename = require('gulp-rename');
 const server = require('browser-sync').create();
 const imagemin = require('gulp-imagemin');
 const pump = require('pump');
+const rigger = require('gulp-rigger');
+const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const ghpages = require('gh-pages');
 // const through2 = require('through2');
@@ -100,6 +101,10 @@ function images() {
 function js(cb) {
   pump([
         src('source/js/*.js'),
+        rigger(),
+        babel({
+          presets: ['@babel/env']
+        }),
         uglify(),
         dest('build/js')
     ],
@@ -128,19 +133,19 @@ function serve() {
     ui: false
   });
 
-  watch(['source/pages/**/*.pug'], { events: ['all'], delay: 100 }, series(
+  watch(['source/pages/**/*.pug', 'source/pu/**/*.pug'], { events: ['add', 'change', 'unlink'], delay: 50 }, series(
     html,
     reload
   ));
-  watch(['source/less/**/*.less'], { events: ['all'], delay: 100 }, series(
+  watch(['source/less/**/*.less'], { events: ['add', 'change', 'unlink'], delay: 50 }, series(
     style,
     reload
   ));
-  watch(['source/js/*.js'], { events: ['all'], delay: 100 }, series(
+  watch(['source/js/**/*.js'], { events: ['add', 'change', 'unlink'], delay: 50 }, series(
     js,
     reload
   ));
-  watch(['source/img/*'], { events: ['all'], delay: 100 }, series(
+  watch(['source/img/*'], { events: ['all'], delay: 50 }, series(
     images,
     reload
   ))

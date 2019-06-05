@@ -9,7 +9,6 @@
   li {
     font-family: "League Gothic", Helvetica, Arial, sans-serif;
     font-size: 30px;
-    line-height: 1;
 
     &:not(:last-child) {
       margin-right: 20px;
@@ -23,5 +22,14 @@
   li.current a {
     // border-bottom: 2px solid darkblue;
     cursor: default;
+  }
+
+  &--vertical {
+    flex-direction: column;
+
+    li {
+      font-family: Andante, Helvetica, Arial, sans-serif;
+      font-size: 18px;
+    }
   }
 }

@@ -2,7 +2,7 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', function () {
-  const mapBlock = document.querySelector('.map');
+  const mapBlock = document.querySelector('#map');
 
   if (mapBlock) {
     ymaps.ready(function () {

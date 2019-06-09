@@ -133,7 +133,7 @@ function serve() {
     ui: false
   });
 
-  watch(['source/pages/**/*.pug', 'source/pu/**/*.pug'], { events: ['add', 'change', 'unlink'], delay: 50 }, series(
+  watch(['source/pages/**/*.pug', 'source/pug/**/*.pug'], { events: ['add', 'change', 'unlink'], delay: 50 }, series(
     html,
     reload
   ));

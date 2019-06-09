@@ -4,3 +4,4 @@
 
 // собственные файлы
 //= modules/map.js
+//= modules/tabs.js

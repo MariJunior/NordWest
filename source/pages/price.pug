@@ -10,164 +10,168 @@ block header
 block content
   h1.visually-hidden Цены на услуги ООО 'НордВест'
   section.price
-    .container.container--price
-      ul.price__list.price-list
-        li.price-list__item.price-list-item
-          .price-list-item__header
-            h2 Услуги по ведению бухгалтерского и налогового учета
-          .price-list-item__table
-            p Цены указаны за месяц
-            table
-              thead
-                tr
-                  th(scope='col') Системы налогообложения
-                  th(scope='colgroup', colspan='4') Количество документов (приход-расход)
-              tbody
-                tr
-                  th(scope='col') ОСН, УСН (доходы-расходы)
-                  th(scope='col') до 20
-                  th(scope='col') от 21 до 50
-                  th(scope='col') от 51 до 100
-                  th(scope='col') от 101
-                tr
-                  td(scope='row') Бухгалтерское обслуживание(1 работник)
-                  td 3000 &#8381;
-                  td 5000 &#8381;
-                  td 7000 &#8381;
-                  td 10000 &#8381;
-                tr
-                  td(scope='row') Бухгалтерское обслуживание(до 5 работников)
-                  td 5000 &#8381;
-                  td 7000 &#8381;
-                  td 10000 &#8381;
-                  td 15000 &#8381;
-                tr
-                  td(scope='row') Бухгалтерское обслуживание (свыше 5 работников)
-                  td 7000 &#8381;
-                  td 10000 &#8381;
-                  td 15000 &#8381;
-                  td 18000 &#8381;
-                tr
-                  td(colspan='5')
-                tr
-                  th(scope='col') УСН (доходы), ЕНВД
-                  th(scope='col') до 20
-                  th(scope='col') от 21 до 50
-                  th(scope='col') от 51 до 100
-                  th(scope='col') от 101
-                tr
-                  td(scope='row') Бухгалтерское обслуживание(1 работник)
-                  td 1500 &#8381;
-                  td 3000 &#8381;
-                  td 5000 &#8381;
-                  td 7000 &#8381;
-                tr
-                  td(scope='row') Бухгалтерское обслуживание(до 5 работников)
-                  td 4000 &#8381;
-                  td 5000 &#8381;
-                  td 7000 &#8381;
-                  td 10000 &#8381;
-                tr
-                  td(scope='row') Бухгалтерское обслуживание (свыше 5 работников)
-                  td 5000 &#8381;
-                  td 7000 &#8381;
-                  td 10000 &#8381;
-                  td 15000 &#8381;
-            p
-              | Цены в прайсе являются базовыми.
-              | Стоимость договора расчитывается индивидуально.
-            ul
-              li Совмещение нескольких систем налогообложения (ЕНВД+ОСНО, ЕНВД+УСН) увеличивает стоимость услуг на 20%.
-              li Наличие экспорта/импорта увеличивает стоимость услуг на 20%.
-              li Ведение кадрового учёта в полном объеме увеличивает стоимость услуг на 25%.
-        li.price-list__item.price-list-item
-          .price-list-item__header
-            h2 Индивидуальный расчет
-          .price-list-item__table
-            p Цены указаны за месяц
-            table
-              thead
-                tr
-                  th(scope='col') Вид услуги
-                  th(scope='col') Стоимость
-              tbody
-                tr
-                  td(scope='row') Ведение 1 торговой точки на ЕНВД (касса, отчёты о розничных продажах)
-                  td 2500 &#8381;
-                tr
-                  td(scope='row') Расчет заработной платы + отчёты до 3 сотрудников
-                  td 1000 &#8381;
-                tr
-                  td Каждый последующий сотрудник
-                  td + 200 &#8381;/чел.
-                tr
-                  td(scope='row') Составление общих отчётов (НДС, прибыль, бухгалтерский баланс), консультации
-                  td 1000 &#8381;
-                tr
-                  td(scope='row') Обработка документов поступление-/реализация  (правильность составления, внесение в программу и пр.)
-                  td 100 &#8381;/документ
-                tr
-                  td(scope='row') Внесение банковских выписок в программу (выгрузка)
-                  td 500 &#8381;
-        li.price-list__item.price-list-item
-          .price-list-item__header
-            h2 Дополнительные услуги
-          .price-list-item__table
-            table
-              tbody
-                tr
-                  td Сдача нулевых отчетов #[sup *]
-                tr
-                  td(scope='row') #[sup *] ОСНО
-                  td 3000 &#8381;/квартал
-                tr
-                  td(scope='row') #[sup *] УСН
-                  td 1500 &#8381;/квартал
-                tr
-                  td(scope='row') Разовое заполнение декларации
-                  td 400 &#8381;/шт.
-                tr
-                  td(scope='row') Отправка готовых деклараций (файлом) по ТКС
-                  td 200 &#8381;/шт.
-                tr
-                  td(scope='row') Постановка кадрового учета (до 3 человек)
-                  td 7000 &#8381;
-                tr
-                  td(scope='row') Каждый последующий сотрудник
-                  td + 500 &#8381;/чел.
-                tr
-                  td(scope='row') Разовое возмещение сумм из ФСС
-                  td от 1500 &#8381;
-                tr
-                  td(scope='row') Изготовление платежных поручений (если ведение банка не входит в стоимость обслуживания)
-                  td 50 &#8381;/шт.
-                tr
-                  td(scope='row') Архивирование документов (разово)
-                  td 200 &#8381;/папка
-                tr
-                  td Отправка вторых экземпляров актов, накладных поставщикам(покупателям) почтой #[sup **]
-                tr
-                  td(scope='row') #[sup **] простое письмо
-                  td от 30 &#8381;/шт.
-                tr
-                  td(scope='row') #[sup **] заказное письмо
-                  td от 150 &#8381;/шт.
-                tr
-                  td Консультационные услуги #[sup ***]
-                tr
-                  td(scope='row') #[sup ***] устная консультация
-                  td 500 &#8381;/час
-                tr
-                  td(scope='row') #[sup ***] писменная консультация
-                  td 2000 &#8381;/вопрос
-                tr
-                  td(scope='row') Помощь в оформлении кредита (заполнение анкет, ТЭО и прочее)
-                  td 1% от суммы кредита
-                tr
-                  td(scope='row') Возмещение НДС из бюджета
-                  td 10% от суммы возмещения
-      p Цены указаны по состоянию на
-        ins 01 октября 2015 года
+    h1.visually-hidden Наши услуги и цены на них
+
+    .price__tabs.tabs
+      ul.tabs__links(role='tablist')
+        li.tabs__link-wrap.tabs__link-wrap--active(role='presentation')
+          a(href='#tab01', data-toggle='tab', role='tab') Услуги по ведению бухгалтерского и налогового учета
+        li.tabs__link-wrap(role='presentation')
+          a(href='#tab02', data-toggle='tab', role='tab') Индивидуальный расчет
+        li.tabs__link-wrap(role='presentation')
+          a(href='#tab03', data-toggle='tab', role='tab') Дополнительные услуги
+
+      .tabs__content-wrapper
+        .tabs__content-item.tabs__content-item--active.table-with-notes#tab01(role='tabpanel')
+          p.table-with-notes__note Цены указаны за месяц
+          table.table-with-notes__table
+            thead
+              tr.table-with-notes__table-row
+                th.table-with-notes__table-data.table-with-notes__table-data--head(scope='col') Системы налогообложения
+                th.table-with-notes__table-data.table-with-notes__table-data--head(scope='colgroup', colspan='4') Количество документов (приход-расход)
+            tbody
+              tr.table-with-notes__table-row
+                th.table-with-notes__table-data.table-with-notes__table-data--title(scope='col') ОСН, УСН (доходы-расходы)
+                th.table-with-notes__table-data(scope='col') до 20
+                th.table-with-notes__table-data(scope='col') от 21 до 50
+                th.table-with-notes__table-data(scope='col') от 51 до 100
+                th.table-with-notes__table-data(scope='col') от 101
+              tr.table-with-notes__table-row
+                td.table-with-notes__table-data.table-with-notes__table-data--title(scope='row') Бухгалтерское обслуживание(1 работник)
+                td.table-with-notes__table-data 3000 &#8381;
+                td.table-with-notes__table-data 5000 &#8381;
+                td.table-with-notes__table-data 7000 &#8381;
+                td.table-with-notes__table-data 10000 &#8381;
+              tr.table-with-notes__table-row
+                td.table-with-notes__table-data.table-with-notes__table-data--title(scope='row') Бухгалтерское обслуживание(до 5 работников)
+                td.table-with-notes__table-data 5000 &#8381;
+                td.table-with-notes__table-data 7000 &#8381;
+                td.table-with-notes__table-data 10000 &#8381;
+                td.table-with-notes__table-data 15000 &#8381;
+              tr.table-with-notes__table-row
+                td.table-with-notes__table-data.table-with-notes__table-data--title(scope='row') Бухгалтерское обслуживание (свыше 5 работников)
+                td.table-with-notes__table-data 7000 &#8381;
+                td.table-with-notes__table-data 10000 &#8381;
+                td.table-with-notes__table-data 15000 &#8381;
+                td.table-with-notes__table-data 18000 &#8381;
+              tr.table-with-notes__table-row
+                td.table-with-notes__table-data(colspan='5')
+              tr.table-with-notes__table-row
+                th.table-with-notes__table-data.table-with-notes__table-data--title(scope='col') УСН (доходы), ЕНВД
+                th.table-with-notes__table-data(scope='col') до 20
+                th.table-with-notes__table-data(scope='col') от 21 до 50
+                th.table-with-notes__table-data(scope='col') от 51 до 100
+                th.table-with-notes__table-data(scope='col') от 101
+              tr.table-with-notes__table-row
+                td.table-with-notes__table-data.table-with-notes__table-data--title(scope='row') Бухгалтерское обслуживание(1 работник)
+                td.table-with-notes__table-data 1500 &#8381;
+                td.table-with-notes__table-data 3000 &#8381;
+                td.table-with-notes__table-data 5000 &#8381;
+                td.table-with-notes__table-data 7000 &#8381;
+              tr.table-with-notes__table-row
+                td.table-with-notes__table-data.table-with-notes__table-data--title(scope='row') Бухгалтерское обслуживание(до 5 работников)
+                td.table-with-notes__table-data 4000 &#8381;
+                td.table-with-notes__table-data 5000 &#8381;
+                td.table-with-notes__table-data 7000 &#8381;
+                td.table-with-notes__table-data 10000 &#8381;
+              tr.table-with-notes__table-row
+                td.table-with-notes__table-data.table-with-notes__table-data--title(scope='row') Бухгалтерское обслуживание (свыше 5 работников)
+                td.table-with-notes__table-data 5000 &#8381;
+                td.table-with-notes__table-data 7000 &#8381;
+                td.table-with-notes__table-data 10000 &#8381;
+                td.table-with-notes__table-data 15000 &#8381;
+          p.table-with-notes__note.table-with-notes__note--big
+            | Цены в прайсе являются базовыми.
+            | Стоимость договора расчитывается индивидуально.
+          ul.table-with-notes__note-list
+            li.table-with-notes__note--item Совмещение нескольких систем налогообложения (ЕНВД+ОСНО, ЕНВД+УСН) увеличивает стоимость услуг на 20%.
+            li.table-with-notes__note--item Наличие экспорта/импорта увеличивает стоимость услуг на 20%.
+            li.table-with-notes__note--item Ведение кадрового учёта в полном объеме увеличивает стоимость услуг на 25%.
+
+        .tabs__content-item.table-with-notes#tab02(role='tabpanel')
+          p.table-with-notes__note Цены указаны за месяц
+          table.table-with-notes__table
+            thead
+              tr.table-with-notes__table-row
+                th.table-with-notes__table-data.table-with-notes__table-data--head(scope='col') Вид услуги
+                th.table-with-notes__table-data.table-with-notes__table-data--head(scope='col') Стоимость
+            tbody
+              tr.table-with-notes__table-row
+                td.table-with-notes__table-data.table-with-notes__table-data--title(scope='row') Ведение 1 торговой точки на ЕНВД (касса, отчёты о розничных продажах)
+                td.table-with-notes__table-data 2500 &#8381;
+              tr.table-with-notes__table-row
+                td.table-with-notes__table-data.table-with-notes__table-data--title(scope='row') Расчет заработной платы + отчёты до 3 сотрудников
+                td.table-with-notes__table-data 1000 &#8381;
+              tr.table-with-notes__table-row
+                td.table-with-notes__table-data Каждый последующий сотрудник
+                td.table-with-notes__table-data + 200 &#8381;/чел.
+              tr.table-with-notes__table-row
+                td.table-with-notes__table-data.table-with-notes__table-data--title(scope='row') Составление общих отчётов (НДС, прибыль, бухгалтерский баланс), консультации
+                td.table-with-notes__table-data 1000 &#8381;
+              tr.table-with-notes__table-row
+                td.table-with-notes__table-data.table-with-notes__table-data--title(scope='row') Обработка документов поступление-/реализация  (правильность составления, внесение в программу и пр.)
+                td.table-with-notes__table-data 100 &#8381;/документ
+              tr.table-with-notes__table-row
+                td.table-with-notes__table-data.table-with-notes__table-data--title(scope='row') Внесение банковских выписок в программу (выгрузка)
+                td.table-with-notes__table-data 500 &#8381;
+
+        .tabs__content-item.table-with-notes#tab03(role='tabpanel')
+          table.table-with-notes__table
+            tbody
+              tr.table-with-notes__table-row
+                td.table-with-notes__table-data Сдача нулевых отчетов #[sup *]
+              tr.table-with-notes__table-row
+                td.table-with-notes__table-data.table-with-notes__table-data--sub(scope='row') #[sup *] ОСНО
+                td.table-with-notes__table-data.table-with-notes__table-data--sub 3000 &#8381;/квартал
+              tr.table-with-notes__table-row
+                td.table-with-notes__table-data.table-with-notes__table-data--sub(scope='row') #[sup *] УСН
+                td.table-with-notes__table-data.table-with-notes__table-data--sub 1500 &#8381;/квартал
+              tr.table-with-notes__table-row
+                td.table-with-notes__table-data(scope='row') Разовое заполнение декларации
+                td.table-with-notes__table-data 400 &#8381;/шт.
+              tr.table-with-notes__table-row
+                td.table-with-notes__table-data(scope='row') Отправка готовых деклараций (файлом) по ТКС
+                td.table-with-notes__table-data 200 &#8381;/шт.
+              tr.table-with-notes__table-row
+                td.table-with-notes__table-data(scope='row') Постановка кадрового учета (до 3 человек)
+                td.table-with-notes__table-data 7000 &#8381;
+              tr.table-with-notes__table-row
+                td.table-with-notes__table-data(scope='row') Каждый последующий сотрудник
+                td.table-with-notes__table-data + 500 &#8381;/чел.
+              tr.table-with-notes__table-row
+                td.table-with-notes__table-data(scope='row') Разовое возмещение сумм из ФСС
+                td.table-with-notes__table-data от 1500 &#8381;
+              tr.table-with-notes__table-row
+                td.table-with-notes__table-data(scope='row') Изготовление платежных поручений (если ведение банка не входит в стоимость обслуживания)
+                td.table-with-notes__table-data 50 &#8381;/шт.
+              tr.table-with-notes__table-row
+                td.table-with-notes__table-data(scope='row') Архивирование документов (разово)
+                td.table-with-notes__table-data 200 &#8381;/папка
+              tr.table-with-notes__table-row
+                td.table-with-notes__table-data Отправка вторых экземпляров актов, накладных поставщикам(покупателям) почтой #[sup **]
+              tr.table-with-notes__table-row
+                td.table-with-notes__table-data.table-with-notes__table-data--sub(scope='row') #[sup **] простое письмо
+                td.table-with-notes__table-data.table-with-notes__table-data--sub от 30 &#8381;/шт.
+              tr.table-with-notes__table-row
+                td.table-with-notes__table-data.table-with-notes__table-data--sub(scope='row') #[sup **] заказное письмо
+                td.table-with-notes__table-data.table-with-notes__table-data--sub от 150 &#8381;/шт.
+              tr.table-with-notes__table-row
+                td.table-with-notes__table-data Консультационные услуги #[sup ***]
+              tr.table-with-notes__table-row
+                td.table-with-notes__table-data.table-with-notes__table-data--sub(scope='row') #[sup ***] устная консультация
+                td.table-with-notes__table-data.table-with-notes__table-data--sub 500 &#8381;/час
+              tr.table-with-notes__table-row
+                td.table-with-notes__table-data.table-with-notes__table-data--sub(scope='row') #[sup ***] писменная консультация
+                td.table-with-notes__table-data.table-with-notes__table-data--sub 2000 &#8381;/вопрос
+              tr.table-with-notes__table-row
+                td.table-with-notes__table-data(scope='row') Помощь в оформлении кредита (заполнение анкет, ТЭО и прочее)
+                td.table-with-notes__table-data 1% от суммы кредита
+              tr.table-with-notes__table-row
+                td.table-with-notes__table-data(scope='row') Возмещение НДС из бюджета
+                td.table-with-notes__table-data 10% от суммы возмещения
+
+    p.price__note Цены указаны по состоянию на
+      i.price__note-data 01 октября 2015 года
 
 block footer
   +footer(pagesList, 2)

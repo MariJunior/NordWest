@@ -8,7 +8,12 @@
     margin-bottom: 50px;
   }
 
-  &__card:not(:last-of-type) {
+  &__wrap {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  &__card:not(:first-of-type) {
     margin-bottom: 30px;
   }
 }

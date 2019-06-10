@@ -29,11 +29,12 @@
       background-position: center 35%;
       cursor: pointer;
 
-      transition: transform 0.75s;
+      transition: opacity 0.75s, height 0.1s 0.75s;
     }
 
-    &:hover::before {
-      transform: scale(0);
+    &--hovered::before {
+      height: 0;
+      opacity: 0;
     }
   }
 

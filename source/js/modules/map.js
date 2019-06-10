@@ -2,7 +2,14 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', function () {
+  let mapContainer = document.querySelector('.map__container');
   const mapBlock = document.querySelector('#map');
+
+  if(mapContainer) {
+    mapContainer.addEventListener('mouseenter', function() {
+      mapContainer.classList.add('map__container--hovered');
+    });
+  }
 
   if (mapBlock) {
     ymaps.ready(function () {

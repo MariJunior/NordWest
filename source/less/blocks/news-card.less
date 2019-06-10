@@ -1,6 +1,4 @@
 .news-card {
-  border: 1px solid #cccccc;
-
   &__header {
     display: flex;
     flex-direction: row-reverse;
@@ -24,6 +22,18 @@
     font-size: 14px;
     color: #606060;
     font-style: italic;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      vertical-align: baseline;
+
+      margin-right: 5px;
+      width: 14px;
+      height: 14px;
+      background-image: url("../img/calendar.svg");
+      background-size: contain;
+    }
   }
 
   &__content {
@@ -31,13 +41,9 @@
   }
 
   &__text {
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 10px;
 
     font-size: 16px;
-    text-indent: 20px;
-
-    &:not(:last-child) {
-      margin-bottom: 10px;
-    }
   }
 }

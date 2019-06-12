@@ -27,9 +27,9 @@
   &__item {
     display: flex;
     flex-direction: column;
-    width: 390px;
+    width: 400px;
     margin-bottom: 40px;
-    padding: 30px 15px;
+    padding: 30px 20px;
 
     background-color: rgba(255, 255, 255, 0.3);
     background-image: repeating-linear-gradient(-45deg,
@@ -39,7 +39,7 @@
       rgba(0, 0, 0, 0.05) 4px);
 
     &:not(:nth-child(even)):not(:last-child) {
-      margin-right: 100px;
+      margin-right: 80px;
     }
 
     &-reviwer {
@@ -50,6 +50,7 @@
     }
 
     &-photo {
+      margin-right: 10px;
       width: 108px;
       height: 108px;
 
@@ -78,16 +79,16 @@
     }
 
     &-text {
-      max-height: 300px;
       margin: 0;
-      overflow-y: hidden;
+      padding: 0 1px;
 
       font-size: 16px;
-    }
 
-    &-more {
-      margin-top: auto;
-      padding-top: 10px;
+      .js & {
+        max-height: 240px;
+
+        overflow-y: hidden;
+      }
     }
   }
 }

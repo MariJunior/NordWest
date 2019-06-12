@@ -72,9 +72,11 @@
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
     "jquery": "^3.4.1",
     "mkdirp": "^0.5.1",
-    "normalize.less": "^1.0.0"
+    "normalize.less": "^1.0.0",
+    "readmore-js": "^2.2.1"
   },
   "husky": {
     "hooks": {

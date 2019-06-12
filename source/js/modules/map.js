@@ -24,9 +24,11 @@ $(document).ready(function () {
         searchControlProvider: 'yandex#search'
       });
 
-      const myPlacemark = new ymaps.Placemark([55.75399400, 37.62209300], {
+      const myPlacemark = new ymaps.Placemark([55.16013857, 61.28671600], {
         hintContent: 'Мы находимся тут',
         balloonContent: 'Челябинск, улица Академика Сахарова, 34'
+      },{
+        preset: 'islands#darkBluePocketIcon'
       });
 
       myMap.geoObjects.add(myPlacemark);

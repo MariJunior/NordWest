@@ -2,8 +2,6 @@
   padding-top: 50px;
   padding-bottom: 70px;
 
-  background-color: #c7e9f6;
-
   &__title {
     margin-bottom: 70px;
   }
@@ -13,18 +11,27 @@
     flex-wrap: wrap;
     align-content: center;
     align-items: center;
-    width: 960px;
+    width: 1060px;
     margin: 0 auto;
-    padding-left: 0;
+  }
 
-    list-style: none;
+  &__item {
+    padding: 5px;
 
-    li:not(:nth-child(5n + 5)) {
+    border: 5px solid #6d9cc4;
+    background-color: #c7e9f6;
+
+    &:not(:nth-child(5n + 5)) {
       margin-right: 15px;
     }
 
-    li:not(:nth-last-child(-n + 5)) {
+    &:not(:nth-last-child(-n + 5)) {
       margin-bottom: 15px;
+    }
+
+    img {
+      width: 180px;
+      height: 260px;
     }
   }
 }

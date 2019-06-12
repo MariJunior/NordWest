@@ -1,6 +1,8 @@
 /* global document window history location Element */
 
-document.addEventListener('DOMContentLoaded', function(){
+const $ = require('jquery');
+
+$(document).ready(function(){
 
   if(location.hash) {
     showTab(location.hash);
@@ -10,11 +12,11 @@ document.addEventListener('DOMContentLoaded', function(){
   document.addEventListener('click', function(event) {
     if(event.target.dataset.toggle === 'tab') {
       event.preventDefault();
-      var target = event.target.hash === undefined ? event.target.dataset.target : event.target.hash;
+      let target = event.target.hash === undefined ? event.target.dataset.target : event.target.hash;
       if ( target !== undefined ) {
         showTab(target);
         if(history && history.pushState && history.replaceState) {
-          var stateObject = {'url' : target};
+          let stateObject = {'url' : target};
           if (window.location.hash && stateObject.url !== window.location.hash) {
             window.history.pushState(stateObject, document.title, window.location.pathname + target);
           } else {
@@ -30,11 +32,11 @@ document.addEventListener('DOMContentLoaded', function(){
    * @param  {string} tabId ID таба, который нужно показать
    */
   function showTab(tabId){
-    var element = document.querySelector(tabId);
+    const element = document.querySelector(tabId);
     if ( element && element.classList.contains('tabs__content-item') ) {
-      var tabsParent = document.querySelector(tabId).closest('.tabs');
-      var activeTabClassName = 'tabs__link-wrap--active';
-      var activeTabContentClassName = 'tabs__content-item--active';
+      const tabsParent = document.querySelector(tabId).closest('.tabs');
+      const activeTabClassName = 'tabs__link-wrap--active';
+      const activeTabContentClassName = 'tabs__content-item--active';
       // таб
       tabsParent.querySelectorAll('.'+activeTabClassName).forEach(function(item){
         item.classList.remove(activeTabClassName);
@@ -52,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function(){
   // Добавление метода .closest() (полифил, собственно)
   (function(e){
     e.closest = e.closest || function(css){
-      var node = this;
+      let node = this;
       while (node) {
         if (node.matches(css)) return node;
         else node = node.parentElement;

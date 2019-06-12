@@ -1,7 +1,4 @@
-// подключение js-файлов с помощью rigger-а
+/* global require */
 
-// библиотеки.полифилы и т.д.
-
-// собственные файлы
-//= modules/map.js
-//= modules/tabs.js
+require('./modules/map.js');
+require('./modules/tabs.js');

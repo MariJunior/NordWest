@@ -1,7 +1,10 @@
+/* global document window console */
 /* eslint-disable no-alert, no-console */
 'use strict';
 
-document.addEventListener('DOMContentLoaded', function () {
+const $ = require('jquery');
+
+$(document).ready(function () {
   let mapContainer = document.querySelector('.map__container');
   const mapBlock = document.querySelector('#map');
 

@@ -15,24 +15,19 @@ const minify = require('gulp-csso');
 const rename = require('gulp-rename');
 const server = require('browser-sync').create();
 const imagemin = require('gulp-imagemin');
-const pump = require('pump');
-const rigger = require('gulp-rigger');
-const babel = require('gulp-babel');
+const webpackStream = require('webpack-stream');
 const uglify = require('gulp-uglify');
 const ghpages = require('gh-pages');
-// const through2 = require('through2');
-// const lec = require ('gulp-line-ending-corrector');
 
 // Удаление директории 'build'
 function clean() {
   return del('build');
 }
 
-// Копирование неизменяемых файлов шрифтов, изображений и иных из директории 'source' в директорию 'build'
+// Копирование неизменяемых файлов из директории 'source' в директорию 'build'
 function copy() {
   return src([
     'source/fonts/**/*.{woff,woff2,eot,ttf}',
-    // 'source/img/**'
   ], {
     base: 'source'
   })
@@ -97,19 +92,46 @@ function images() {
     .pipe(dest('build/img'));
 }
 
-// Минификация всех .js файлов из директории 'source/js' с помошью 'gulp-uglify' и сохранение в директорию 'build/js'
-function js(cb) {
-  pump([
-        src('source/js/*.js'),
-        rigger(),
-        babel({
-          presets: ['@babel/env']
-        }),
-        uglify(),
-        dest('build/js')
-    ],
-    cb
-  );
+// Сборка js c webpack, последующая минификация полученного .js файла и сохранение в директорию 'build/js'
+function buildJs() {
+  return src('source/js/script.js')
+    .pipe(plumber())
+    .pipe(webpackStream({
+      mode: 'production',
+      output: {
+        filename: 'script.js',
+      },
+      module: {
+        rules: [
+          {
+            test: /\.(js)$/,
+            exclude: /(node_modules)/,
+            loader: 'babel-loader',
+            query: {
+              presets: [
+                [
+                  '@babel/preset-env',
+                  {
+                    'targets': {
+                      'browsers': ["> 1%", "last 3 versions"]
+                    },
+                    'debug': true,
+                    'useBuiltIns': 'usage'
+                  }
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      // externals: {
+      //   jquery: 'jQuery'
+      // }
+    }))
+    .pipe(dest('build/js'))
+    .pipe(uglify())
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(dest('build/js'));
 }
 
 function reload(done) {
@@ -120,6 +142,14 @@ function reload(done) {
 function deploy(cb) {
   ghpages.publish(path.join(process.cwd(), './build'), cb);
 }
+
+exports.clean = clean;
+exports.copy = copy;
+exports.html = html;
+exports.style = style;
+exports.images = images;
+exports.buildJs = buildJs;
+exports.deploy = deploy;
 
 // Подключение плагина 'browser-sync' и начало отслеживания изменений файлов в директории 'build/', выполнения соотв. задач и перезагрузки страницы
 function serve() {
@@ -142,7 +172,7 @@ function serve() {
     reload
   ));
   watch(['source/js/**/*.js'], { events: ['add', 'change', 'unlink'], delay: 50 }, series(
-    js,
+    buildJs,
     reload
   ));
   watch(['source/img/*'], { events: ['all'], delay: 50 }, series(
@@ -151,24 +181,16 @@ function serve() {
   ))
 }
 
-exports.clean = clean;
-exports.copy = copy;
-exports.html = html;
-exports.style = style;
-exports.images = images;
-exports.js = js;
-exports.deploy = deploy;
-
 exports.build = series(
   clean,
   parallel(copy, images),
-  parallel(html, style, js)
+  parallel(html, style, buildJs)
 );
 
 exports.default = series(
   clean,
   parallel(copy, images),
-  parallel(html, style, js),
+  parallel(html, style, buildJs),
   serve
 );
 

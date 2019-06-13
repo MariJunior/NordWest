@@ -68,7 +68,7 @@ function style() {
     ]))
     .pipe(dest('build/css'))
     .pipe(minify())
-    .pipe(rename('style.min.css'))
+    .pipe(rename({ suffix: '.min' }))
     .pipe(dest('build/css'))
     .pipe(server.stream());
 }
@@ -116,6 +116,7 @@ function buildJs() {
                       'browsers': ["> 1%", "last 3 versions"]
                     },
                     'debug': true,
+                    "corejs": "3.0.0",
                     'useBuiltIns': 'usage'
                   }
                 ]
@@ -123,6 +124,9 @@ function buildJs() {
             }
           }
         ]
+      },
+      optimization: {
+        minimize: false
       },
       // externals: {
       //   jquery: 'jQuery'
@@ -193,14 +197,3 @@ exports.default = series(
   parallel(html, style, buildJs),
   serve
 );
-
-// Проверка и приведение концов строк всех файлов к \n (LF) для GitHub (ну и просто для единообразия)
-// gulp.task('correct-line-ending', function() {
-//     gulp.src(['./**/*', '!node_modules/**', '!source/img/**', '!build/img/**'])
-//         .pipe(lec({
-//           verbose: true,
-//           eolc: 'LF',
-//           encoding: 'utf8'
-//         }))
-//         .pipe(gulp.dest('./'));
-// });

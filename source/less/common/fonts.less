@@ -1,32 +1,5 @@
-@font-face {
-  font-family: "Andante"; /* stylelint-disable-line font-family-name-quotes */
-  src: url("../fonts/Andante.eot");
-  src:
-    local("Andante"),
-    url("../fonts/Andante.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/Andante.woff2") format("woff2"),
-    url("../fonts/Andante.woff") format("woff"),
-    url("../fonts/Andante.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
+/* stylelint-disable font-family-name-quotes */
 
-  font-display: swap;
-}
+.font-face-extended(@family: Andante);
 
-@font-face {
-  font-family: "League Gothic";
-  src: url("../fonts/leaguegothic.eot");
-  src:
-    local("League Gothic"),
-    local("LeagueGothic"),
-    local("League Gothic Regular"),
-    local("LeagueGothicRegular"),
-    url("../fonts/leaguegothic.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/leaguegothic.woff2") format("woff2"),
-    url("../fonts/leaguegothic.woff") format("woff"),
-    url("../fonts/leaguegothic.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-
-  font-display: swap;
-}
+.font-face-extended(@family: League Gothic, @filename: leaguegothic);

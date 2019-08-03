@@ -1,0 +1,137 @@
+.feedback {
+  padding-top: 60px;
+  padding-right: 80px;
+  padding-bottom: 60px;
+  padding-left: 80px;
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__form {
+    position: relative;
+
+    width: 800px;
+    margin: 0 auto;
+  }
+
+  &__form-wrap {
+    display: flex;
+    margin-bottom: 40px;
+  }
+
+  &__form-wrap-inner {
+    width: 340px;
+    min-width: 340px;
+    margin-right: 40px;
+  }
+
+  &__form-paragraph {
+    position: relative;
+
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-top: 30px;
+
+    &--lower {
+      margin-bottom: 0;
+    }
+  }
+
+  &__form-label {
+    position: absolute;
+    top: 42px;
+    z-index: 2;
+
+    display: block;
+    max-width: 90%;
+    padding: 0 15px;
+    overflow: hidden;
+
+    color: #5a5a5a;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    transform-origin: left center;
+
+    transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
+
+    pointer-events: none;
+  }
+
+  &__form-label-icon {
+    margin-right: 5px;
+
+    transition: fill 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
+
+    fill: #5a5a5a;
+  }
+
+  &__form-field {
+    position: relative;
+    z-index: 1;
+
+    display: block;
+    width: 100%;
+    padding: 5px 15px;
+
+    background-color: #f3f3f3;
+    border: 2px solid #808184;
+    border-radius: 4px;
+
+    transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
+
+    appearance: none;
+    touch-action: manipulation;
+
+    &:hover,
+    &:focus {
+      background-color: #ddf0ff;
+      border-color: #689ac4;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &--textarea {
+      height: 100%;
+    }
+
+    &::placeholder {
+      opacity: 0;
+
+      transition: inherit;
+    }
+  }
+
+  &__form-field:hover ~ &__form-label,
+  &__form-field:focus ~ &__form-label {
+    color: #689ac4;
+  }
+
+  &__form-field:hover ~ &__form-label &__form-label-icon,
+  &__form-field:focus ~ &__form-label &__form-label-icon {
+    fill: #689ac4;
+  }
+
+  &__form-field:focus ~ &__form-label {
+    transform: translate(0, -37px);
+  }
+
+  &__form-field:not(:placeholder-shown) ~ &__form-label {
+    text-transform: uppercase;
+    font-style: italic;
+
+    transform: translate(5px, -37px) scale(0.6);
+  }
+
+  &__form-field:focus::placeholder {
+    opacity: 1;
+  }
+
+  &__form-submit {
+    margin: 0 auto;
+  }
+}

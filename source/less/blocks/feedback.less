@@ -1,7 +1,7 @@
 .feedback {
-  padding-top: 60px;
+  padding-top: @padding-top-base;
   padding-right: 80px;
-  padding-bottom: 60px;
+  padding-bottom: @padding-bottom-base;
   padding-left: 80px;
 
   &__title {
@@ -49,13 +49,13 @@
     padding: 0 15px;
     overflow: hidden;
 
-    color: #5a5a5a;
+    color: @gray--darken;
     white-space: nowrap;
     text-overflow: ellipsis;
 
     transform-origin: left center;
 
-    transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
+    transition: @transition-full;
 
     pointer-events: none;
   }
@@ -63,9 +63,9 @@
   &__form-label-icon {
     margin-right: 5px;
 
-    transition: fill 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
+    transition: @transition-full;
 
-    fill: #5a5a5a;
+    fill: @gray--darken;
   }
 
   &__form-field {
@@ -76,23 +76,34 @@
     width: 100%;
     padding: 5px 15px;
 
-    background-color: #f3f3f3;
-    border: 2px solid #808184;
+    background-color: @gray--lightest;
+    border: 2px solid;
+    border-color: @gray;
     border-radius: 4px;
 
-    transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
+    transition: @transition-full;
 
     appearance: none;
     touch-action: manipulation;
 
     &:hover,
     &:focus {
-      background-color: #ddf0ff;
-      border-color: #689ac4;
+      background-color: lighten(saturate(@color-main, 50%), 30%);
+      border-color: saturate(@color-main, 10%);
     }
 
     &:focus {
       outline: none;
+    }
+
+    &:valid {
+      background-color: lighten(@color-success, 20%);
+      border-color: @color-success;
+    }
+
+    &:invalid:not(:focus):not(:placeholder-shown) {
+      background-color: lighten(@color-danger, 20%);
+      border-color: @color-danger;
     }
 
     &--textarea {
@@ -100,6 +111,8 @@
     }
 
     &::placeholder {
+      color: @gray;
+
       opacity: 0;
 
       transition: inherit;
@@ -108,12 +121,12 @@
 
   &__form-field:hover ~ &__form-label,
   &__form-field:focus ~ &__form-label {
-    color: #689ac4;
+    color: saturate(@color-main, 10%);
   }
 
   &__form-field:hover ~ &__form-label &__form-label-icon,
   &__form-field:focus ~ &__form-label &__form-label-icon {
-    fill: #689ac4;
+    fill: saturate(@color-main, 10%);
   }
 
   &__form-field:focus ~ &__form-label {

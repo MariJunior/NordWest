@@ -20,7 +20,8 @@
 
     border-collapse: collapse;
 
-    border: 1px solid #a0a0a0;
+    border: 1px solid;
+    border-color: @gray--light;
 
     &--thin {
       width: 800px;
@@ -30,19 +31,22 @@
   &__table-data {
     padding: 15px 30px;
 
+    font-weight: 400;
     vertical-align: middle;
     text-align: center;
 
-    border-bottom: 1px solid #a0a0a0;
+    border-bottom: 1px solid;
+    border-color: @gray--light;
 
     &:not(:first-child) {
-      border-left: 1px solid #a0a0a0;
+      border-left: 1px solid;
+      border-color: @gray--light;
     }
 
     &--head {
       font-size: 20px;
 
-      background-color: #cccccc;
+      background-color: @gray--lighter;
     }
 
     &--title {
@@ -52,7 +56,7 @@
     }
 
     &--color {
-      background-color: #efefef;
+      background-color: @gray--lightest;
     }
 
     &--note {

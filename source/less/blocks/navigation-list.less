@@ -7,7 +7,7 @@
   list-style: none;
 
   li {
-    font-family: "League Gothic", Helvetica, Arial, sans-serif;
+    font-family: @font-family--contrast;
     font-size: 30px;
 
     &:not(:last-child) {
@@ -20,7 +20,6 @@
   }
 
   li.current a {
-    // border-bottom: 2px solid darkblue;
     cursor: default;
   }
 
@@ -28,8 +27,8 @@
     flex-direction: column;
 
     li {
-      font-family: Andante, Helvetica, Arial, sans-serif;
-      font-size: 18px;
+      font-family: @font-family;
+      font-size: @font-size;
     }
   }
 }

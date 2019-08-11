@@ -1,9 +1,9 @@
 .certificates {
-  padding-top: 50px;
-  padding-bottom: 70px;
+  padding-top: @padding-top-base;
+  padding-bottom: @padding-bottom-base;
 
   &__title {
-    margin-bottom: 70px;
+    margin-bottom: @typo-margin-bottom;
   }
 
   &__list {
@@ -18,8 +18,8 @@
   &__item {
     padding: 5px;
 
-    border: 5px solid #6d9cc4;
-    background-color: #c7e9f6;
+    border: 5px solid saturate(@color-main, 20%);
+    background-color: lighten(saturate(@color-main, 30%), 20%);
 
     &:not(:nth-child(5n + 5)) {
       margin-right: 15px;

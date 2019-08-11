@@ -10,17 +10,17 @@ html {
 }
 
 body {
-  min-width: 1200px;
+  min-width: @body-control-width;
   margin: 0;
   padding: 0;
 
-  font-family: Andante, Helvetica, Arial, sans-serif;
-  font-size: 18px; /* @base-size */
+  font-family: @font-family;
+  font-size: @font-size;
   font-weight: 400;
-  line-height: 1.25; /* @base-height */
-  color: #000000; /* @base-text-color */
+  line-height: @line-height;
+  color: @gray--darker;
 
-  background-color: #f3f1f1; /* @body-bg-color */
+  background-color: saturate(@gray--lightest, 8%);
 }
 
 img {

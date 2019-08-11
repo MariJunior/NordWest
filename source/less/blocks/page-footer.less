@@ -4,11 +4,7 @@
   padding-bottom: 5px;
   padding-left: 110px;
 
-  background-image: repeating-linear-gradient(-45deg,
-    #6d9cc4,
-    #6d9cc4 2px,
-    #6392ba 2px,
-    #6392ba 4px);
+  background-image: @gradient-background;
 
   &__wrap {
     display: flex;
@@ -38,7 +34,7 @@
   &__copyright {
     margin: 0;
 
-    font-size: 14px;
+    font-size: @font-size--small;
     text-align: right;
   }
 }

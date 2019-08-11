@@ -1,1 +1,58 @@
-/* stylelint-disable */
+// Базовые цвета https://colorscheme.ru/color-converter.html
+@black:                         hsl(0, 0, 0);           /* #000000 */
+@gray--darkest:                 hsl(0, 0, 10%);         /* #1a1a1a */
+@gray--darker:                  hsl(0, 0, 20%);         /* #333333 */
+@gray--darken:                  hsl(0, 0, 30%);         /* #4d4d4d */
+@gray--dark:                    hsl(0, 0, 40%);         /* #666666 */
+@gray:                          hsl(0, 0, 50%);         /* #808080 */
+@gray--light:                   hsl(0, 0, 60%);         /* #999999 */
+@gray--lighten:                 hsl(0, 0, 70%);         /* #b3b3b3 */
+@gray--lighter:                 hsl(0, 0, 80%);         /* #cccccc */
+@gray--lightest:                hsl(0, 0, 90%);         /* #e6e6e6 */
+@white:                         hsl(0, 0, 100%);        /* #ffffff */
+
+
+// Семантические цвета
+@color-main:                    hsl(208, 42%, 60%);
+@color-additional:              hsl(241, 45%, 64%);
+@color-success:                 hsl(156, 48%, 60%);
+@color-warning:                 hsl(45, 100%, 76%);
+@color-danger:                  hsl(8, 100%, 76%);
+
+@color-map:                     hsl(45, 73%, 91%);
+
+
+// Размеры
+@body-control-width:            1200px;
+@padding-top-base:              50px;
+@padding-bottom-base:           70px;
+
+
+// Базовая типографика
+@font-size--small:              @font-size * 7/9;  /* 14px */
+@font-size--medium:             @font-size * 8/9;  /* 16px */
+@font-size:                     18px;
+@font-size--big:                @font-size * 12/9; /* 24px */
+@font-size--bigen:              @font-size * 15/9; /* 30px */
+@font-size--biger:              @font-size * 18/9; /* 36px */
+@font-size--bigest:             @font-size * 24/9; /* 48px */
+
+@line-height:                   1.25;
+@line-height--monoline:         1;
+
+@font-family:                   Andante, Helvetica, Arial, sans-serif; /* stylelint-disable-line value-keyword-case */
+@font-family--contrast:         "League Gothic", Helvetica, Arial, sans-serif; /* stylelint-disable-line value-keyword-case */
+
+@typo-margin-bottom:            70px;
+
+
+// Разное
+@gradient-background:           repeating-linear-gradient(-45deg,
+  @color-main,
+  @color-main 2px,
+  @color-main 2px,
+  @color-main 4px);
+
+@transition-duration:           0.25s;
+@transition-duration-long:      0.75s;
+@transition-full:               all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);

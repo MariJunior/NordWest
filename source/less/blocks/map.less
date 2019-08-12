@@ -1,6 +1,6 @@
 .map {
-  padding-top: 60px;
-  padding-bottom: 50px;
+  padding-top: @padding-top-base;
+  padding-bottom: @padding-bottom-base;
 
   &__title {
     margin-bottom: 35px;
@@ -12,7 +12,7 @@
     width: 100%;
     height: 550px;
 
-    background-color: @color-map;
+    background-color: hsl(45, 73%, 91%);
     background-image: url("../img/map.png");
     background-position: center;
     background-size: 100%;
@@ -29,7 +29,7 @@
       background-position: 40px -60px;
       cursor: pointer;
 
-      transition: opacity @transition-duration-long, height 0.1s @transition-duration-long;
+      transition: opacity @transition-duration--long, height 0.1s @transition-duration--long;
     }
 
     &--hovered::before {

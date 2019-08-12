@@ -38,7 +38,7 @@
       margin-right: 0;
       margin-bottom: 95px;
 
-      font-size: 24px;
+      font-size: @font-size--big;
       text-align: left;
     }
   }
@@ -58,7 +58,7 @@
   }
 
   &__item-person {
-    font-size: 35px;
+    font-size: @font-size--biger;
     font-style: normal;
 
     &--main {
@@ -81,7 +81,7 @@
   &__item-word {
     margin: 0 5px;
 
-    line-height: 1.75em;
+    line-height: @line-height--big;
 
     background-color: lighten(saturate(spin(@color-main, 10), 20%), 20%);
     box-shadow: 5px 0 0 lighten(saturate(spin(@color-main, 10), 20%), 20%), -5px 0 0 lighten(saturate(spin(@color-main, 10), 20%), 20%);
@@ -97,7 +97,7 @@
     &--main {
       margin: 0 10px;
 
-      line-height: 1.725em;
+      line-height: @line-height--big * 0.985;
 
       box-shadow: 10px 0 0 lighten(saturate(spin(@color-main, 10), 20%), 20%), -10px 0 0 lighten(saturate(spin(@color-main, 10), 20%), 20%);
     }

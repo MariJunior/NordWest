@@ -31,12 +31,12 @@
     margin-bottom: 40px;
     padding: 30px 20px;
 
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: fade(@white, 30%);
     background-image: repeating-linear-gradient(-45deg,
-      rgba(255, 255, 255, 0.05),
-      rgba(255, 255, 255, 0.05) 2px,
-      rgba(0, 0, 0, 0.05) 2px,
-      rgba(0, 0, 0, 0.05) 4px);
+      fade(@white, 5%),
+      fade(@white, 5%) 2px,
+      fade(@black, 5%) 2px,
+      fade(@black, 5%) 4px);
 
     &:not(:nth-child(even)):not(:last-child) {
       margin-right: 80px;
@@ -82,7 +82,7 @@
       margin: 0;
       padding: 0 1px;
 
-      font-size: @font-size--medium;
+      font-size: @font-size--small;
 
       .js & {
         max-height: 240px;

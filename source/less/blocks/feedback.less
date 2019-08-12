@@ -1,8 +1,8 @@
 .feedback {
   padding-top: @padding-top-base;
-  padding-right: 80px;
+  padding-right: @padding-side-base;
   padding-bottom: @padding-bottom-base;
-  padding-left: 80px;
+  padding-left: @padding-side-base;
 
   &__title {
     margin-bottom: 40px;
@@ -79,7 +79,8 @@
     background-color: @gray--lightest;
     border: 2px solid;
     border-color: @gray;
-    border-radius: 4px;
+    border-radius: @border-radius;
+    outline: none;
 
     transition: @transition-full;
 
@@ -90,10 +91,6 @@
     &:focus {
       background-color: lighten(saturate(@color-main, 50%), 30%);
       border-color: saturate(@color-main, 10%);
-    }
-
-    &:focus {
-      outline: none;
     }
 
     &:valid {

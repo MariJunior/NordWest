@@ -19,26 +19,27 @@
 @color-warning:                 hsl(45, 100%, 76%);
 @color-danger:                  hsl(8, 100%, 76%);
 
-@color-map:                     hsl(45, 73%, 91%);
-
 
 // Размеры
 @body-control-width:            1200px;
 @padding-top-base:              50px;
+@padding-side-base:             80px;
 @padding-bottom-base:           70px;
 
+@border-radius:                 4px;
 
 // Базовая типографика
-@font-size--small:              @font-size * 7/9;  /* 14px */
-@font-size--medium:             @font-size * 8/9;  /* 16px */
+@font-size--smallen:            @font-size * 7/9;  /* 14px */
+@font-size--small:              @font-size * 8/9;  /* 16px */
 @font-size:                     18px;
 @font-size--big:                @font-size * 12/9; /* 24px */
 @font-size--bigen:              @font-size * 15/9; /* 30px */
 @font-size--biger:              @font-size * 18/9; /* 36px */
 @font-size--bigest:             @font-size * 24/9; /* 48px */
 
-@line-height:                   1.25;
 @line-height--monoline:         1;
+@line-height:                   1.25;
+@line-height--big:              1.75;
 
 @font-family:                   Andante, Helvetica, Arial, sans-serif; /* stylelint-disable-line value-keyword-case */
 @font-family--contrast:         "League Gothic", Helvetica, Arial, sans-serif; /* stylelint-disable-line value-keyword-case */
@@ -50,9 +51,10 @@
 @gradient-background:           repeating-linear-gradient(-45deg,
   @color-main,
   @color-main 2px,
-  @color-main 2px,
-  @color-main 4px);
+  hsl(208, 39%, 56%) 2px,
+  hsl(208, 39%, 56%) 4px);
 
 @transition-duration:           0.25s;
-@transition-duration-long:      0.75s;
-@transition-full:               all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
+@transition-duration--long:     0.75s;
+@transition-full:               all @transition-duration cubic-bezier(0.53, 0.01, 0.35, 1.5);
+@transition-full--long:         all @transition-duration--long cubic-bezier(0.53, 0.01, 0.35, 1.5);

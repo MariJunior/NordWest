@@ -1,8 +1,8 @@
 .contacts {
   padding-top: @padding-top-base;
-  padding-right: 80px;
-  padding-left: 80px;
+  padding-right: @padding-side-base;
   padding-bottom: @padding-bottom-base;
+  padding-left: @padding-side-base;
 
   &__title {
     margin-bottom: @typo-margin-bottom;
@@ -33,9 +33,10 @@
   &__map {
     width: 100%;
     height: 400px;
+
     background-color: hsl(45, 73%, 91%);
     background-image: url("../img/map.png");
-    background-size: cover;
     background-position: center;
+    background-size: cover;
   }
 }

@@ -1,7 +1,7 @@
 .page-footer {
   padding-top: 30px;
   padding-right: 80px;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
   padding-left: 110px;
 
   background-image: @gradient-background;
@@ -16,19 +16,18 @@
     margin-right: auto;
   }
 
-  &__mail {
-    margin-right: 20px;
-
-    color: inherit;
-  }
-
-  &__telephones {
+  &__contacts {
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
   }
 
-  &__tel {
-    color: inherit;
+  &__contacts-item {
+    font-size: @font-size--small;
+
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
   }
 
   &__copyright {

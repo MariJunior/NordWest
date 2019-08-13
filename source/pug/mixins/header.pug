@@ -5,4 +5,4 @@ mixin header(data, current)
       ul.page-header__navigation-list.navigation-list
         each item, index in data
           li.navigation-list__item(class=(index === current-1 ? 'navigation-list__item--current' : undefined))
-            a.navigation-list__link(href=(index === current-1 ? undefined : item.href))= item.title
+            a.link.link--dark.link--through(href=(index === current-1 ? undefined : item.href))= item.title

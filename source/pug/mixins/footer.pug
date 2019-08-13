@@ -5,10 +5,10 @@ mixin footer(data, current)
         ul.page-footer__navigation-list.navigation-list.navigation-list--vertical
           each item, index in data
             if index !== current - 1
-              li
-                a(href=item.href)= item.title
-      a.page-footer__mail(href='mailto:mail@nordwest74.ru') mail@nordwest74.ru
-      .page-footer__telephones
-        a.page-footer__tel(href='tel:+73512304216') +7 (351) 230-42-16
-        a.page-footer__tel(href='tel:+79088209260') +7 (908) 820-92-60
+              li.navigation-list__item
+                a.link.link--dark(href=item.href)= item.title
+      .page-footer__contacts
+        a.link.link--dark.link--inverse.page-footer__contacts-item(href='tel:+73512304216') +7 (351) 230-42-16
+        a.link.link--dark.link--inverse.page-footer__contacts-item(href='tel:+79088209260') +7 (908) 820-92-60
+        a.link.link--dark.link--inverse.page-footer__contacts-item(href='mailto:mail@nordwest74.ru') mail@nordwest74.ru
     p.page-footer__copyright ООО “НордВест” 2007-2019

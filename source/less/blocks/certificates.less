@@ -21,12 +21,18 @@
     background-color: lighten(saturate(@color-main, 30%), 20%);
     border: 5px solid saturate(@color-main, 20%);
 
+    transition: @transition-full;
+
     &:not(:nth-child(5n + 5)) {
       margin-right: 15px;
     }
 
     &:not(:nth-last-child(-n + 5)) {
       margin-bottom: 15px;
+    }
+
+    &:hover {
+      border-color: lighten(@color-additional, 10%);
     }
 
     img {

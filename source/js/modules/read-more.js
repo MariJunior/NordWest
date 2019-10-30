@@ -9,15 +9,11 @@ $(document).ready(function () {
   if(reviews.length) {
     require('readmore-js');
 
-    reviews.forEach(function (review) {
-      let text = review.querySelector('.reviews__item-text');
-
-      $(text).readmore({
-        speed: 1500,
-        moreLink: '<a href="#">Подробнее</a>',
-        lessLink: '<a href="#">Меньше</a>',
-        embedCSS: false
-      })
+    $('.reviews__item-text').readmore({
+      speed: 1500,
+      moreLink: '<a class="link link--short" href="#">Подробнее</a>',
+      lessLink: '<a class="link link--short" href="#">Меньше</a>',
+      embedCSS: false
     })
   }
 });

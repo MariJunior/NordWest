@@ -11,5 +11,6 @@
   "disallowTrailingSpaces": true,
   "disallowSpacesInsideAttributeBrackets": true,
   "disallowLegacyMixinCall": true,
-  "disallowDuplicateAttributes": true
+  "disallowDuplicateAttributes": true,
+  "excludeFiles": ["source/pages/index.pug"]
 }
